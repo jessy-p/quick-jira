@@ -60,4 +60,4 @@ typings/
 .DS_Store
 
 #settings
-main/settings.js
+src/main/settings.js

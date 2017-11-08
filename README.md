@@ -12,6 +12,7 @@ Node / npm
 
 Download/ Clone the project
 cd quick-jira
+Replace the placeholders in src/main/settings.template.js with your values and rename the file to settings.js
 npm run dev
 
 ## Running the tests
