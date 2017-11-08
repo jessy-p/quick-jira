@@ -1,0 +1,28 @@
+{
+  "name": "electron-with-create-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "electron": "^1.4.14",
+    "foreman": "^2.0.0",
+    "react-scripts": "0.8.5"
+  },
+  "dependencies": {
+    "axios": "^0.17.0",
+    "json-mapper": "0.0.12",
+    "material-ui": "^0.19.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-global-configuration": "^1.2.0"
+  },
+  "homepage": "./",
+  "main": "src/main/electron-starter.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "dev": "nf start -p 3000"
+  }
+}
