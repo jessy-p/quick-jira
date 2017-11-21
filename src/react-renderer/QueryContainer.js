@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import QueryForm from './QueryForm';
 import QueryResults from './QueryResults';
+import IssueDialog from './IssueDialog';
 var JIRAService =  window.require('electron').remote.require('./JIRAService');
 
 class QueryContainer extends Component {
@@ -9,7 +10,9 @@ class QueryContainer extends Component {
     super();
     this.state = {
       query: "",
-      results: []
+      results: [],
+      dialogOpen: false,
+      dialogData: null
     };
   }
 
@@ -23,11 +26,22 @@ class QueryContainer extends Component {
     this.setState({ query: e.target.value });
   }
 
+  handleClose = (e) => {
+    this.setState({ dialogOpen: false })
+  }
+
+  handleRowClick = (index, e) => {
+    e.preventDefault();
+    this.setState({ dialogOpen: true , dialogData: this.state.results[index]})
+  }
+
   render() {
+
     return (
       <div>
         <QueryForm onSubmit={this.handleSubmit} onChange={this.handleChange} query={this.state.query} />
-        <QueryResults issues={this.state.results}/>
+        <QueryResults issues={this.state.results} onClick={this.handleRowClick} />
+        <IssueDialog issue={this.state.dialogData} open={this.state.dialogOpen} onClose={this.handleClose} />
       </div>
     );
   }
