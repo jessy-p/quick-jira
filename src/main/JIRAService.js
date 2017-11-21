@@ -11,7 +11,10 @@ var jsonConverter = jsonMapper.makeConverter({
     priority: 'fields.priority.name',
     status: 'fields.status.name',
     comments: ['fields.comment.comments', jsonMapper.map(function(input){
-        return input.author.displayName+ " : " +input.body;
+        var thisComment = {};
+        thisComment.author =  input.author.displayName;
+        thisComment.comment = input.body;
+        return thisComment;
     })],
     link: jsonMapper.helpers.template(config.get('JIRA_BASE_URL')+'browse/{key}'),
 });
