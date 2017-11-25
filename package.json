@@ -1,5 +1,5 @@
 {
-  "name": "electron-with-create-react-app",
+  "name": "quick-jira",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -11,6 +11,7 @@
     "axios": "^0.17.0",
     "json-mapper": "0.0.12",
     "material-ui": "^0.19.4",
+    "nedb-promise": "^2.0.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-global-configuration": "^1.2.0"

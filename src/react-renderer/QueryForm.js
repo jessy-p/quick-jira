@@ -8,12 +8,13 @@ const QueryForm = (props) => (
     <TextField
       multiLine={true}
       floatingLabelText="JQL Query"
-      defaultValue={props.query}
+      value={props.query}
       fullWidth={true}
       rows={2}
       onChange={props.onChange}
     />
-    <RaisedButton label="Submit" primary={true} onClick={props.onSubmit} />
+    <RaisedButton label="Fetch" primary={true} onClick={props.onSubmit} style={{margin: 12}}/>
+    <RaisedButton label="Save" primary={false} onClick={props.onSave} style={{margin: 12}}/>
   </Paper>
 );
 
